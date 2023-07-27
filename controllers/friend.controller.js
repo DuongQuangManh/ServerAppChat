@@ -25,7 +25,7 @@ exports.add = async (req,res)=>{
             const data = await model.friend.find({user_id:req.body.user_id},{_id:1,name:1,email:1,phone:1,img:1}).populate("user_id","friend_id")
             .populate({ path: 'user_id', select: '_id name email phone img' }).
             populate({ path: 'friend_id', select: '_id name email phone img' });;
-            return res.status(200).json({data:data,msg:"Thành công",user_id:req.body.user_id})
+            return res.status(200).json({data:data,msg:"Thành công"})
         }
     }catch(error){
         return res.status(400).json({msg:"Lỗi server"})

@@ -47,7 +47,7 @@ io.on("connection", (socket) => {
     io.emit("check_message",data);
   })
   socket.on("confirm_req",(data)=>{
-    console.log("-----check socket message---")
+    console.log("-----check socket confirm_req---")
     console.log("check message" + data);
 
     io.emit("check_confirm",data);
